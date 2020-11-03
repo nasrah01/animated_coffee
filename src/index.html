@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="./assets/coffeescript.png">
     <link href="https://fonts.googleapis.com/css?family=Spectral&display=swap" rel="stylesheet">
-    <!-- need to add the favicon for the title-->
+    <link rel="icon" type="image/png" href="./assets/coffeescript.png">
     <title>Addis Coffee Company</title>
 </head>
 <body>
@@ -19,12 +20,17 @@
         <section class="main_heading">
             <div class="main_heading-banner">
                 <h1 class="main_heading-banner-title">Addis Coffee</h1>
-                <ul class="main_heading-banner-nav">
-                    <li><a href="#" class="nav">About</a></li>
-                    <li><a href="#" class="nav">Cafes</a></li>
-                    <li><a href="#" class="nav">Resources</a></li>
-                    <li><a href="#" class="nav">The Blog</a></li>
-                </ul>
+
+                <div class="main_heading-banner--btn menu__btn">
+                    <div class="main_heading-banner--line navigation__one"></div>
+                    <div class="main_heading-banner--line navigation__two"></div>
+                    <div class="main_heading-banner--line navigation__three"></div>
+                </div>
+
+                <ul class="main_heading-banner-nav"></ul>
+                <ul class="main_heading-banner-burger"></ul>
+
+
                 <div class="main_heading-banner-account">
                     <p class="main_heading-banner-account--text"><a href="#" class="nav">Account</a></p>
                     <a href="#" class="nav" id="cart">
@@ -78,7 +84,7 @@
         <section class="main_gallery">
             <p class="main_gallery--heading">Never run out of coffee</p>
             <div class="main_gallery-boxes">
-                <div class="main_gallery-boxes--box">
+                <div class="main_gallery-boxes--box main_gallery-boxes--1">
                     <a href="#" class="nav">
                         <img src="assets/img08.jpg" alt="packaged coffee beans" class="main_gallery-boxes--box-img">
                         <h3 class="main_gallery-boxes--box-name">Dark Kenya beans</h3>
@@ -86,7 +92,7 @@
                         <p class="btn">Add to Basket</p>
                     </a>
                 </div>
-                <div class="main_gallery-boxes--box">
+                <div class="main_gallery-boxes--box main_gallery-boxes--2">
                     <a href="#" class="nav">
                         <img src="assets/img09.jpg" alt="packaged coffee beans" class="main_gallery-boxes--box-img">
                         <h3 class="main_gallery-boxes--box-name">Huila Colombia beans</h3>
@@ -94,7 +100,7 @@
                         <p class="btn">Add to Basket</p>
                     </a>
                 </div>
-                <div class="main_gallery-boxes--box">
+                <div class="main_gallery-boxes--box main_gallery-boxes--3">
                     <a href="#" class="nav">
                         <img src="assets/img10.jpg" alt="packaged coffee beans" class="main_gallery-boxes--box-img">
                         <h3 class="main_gallery-boxes--box-name">Jimma Ethiopian beans</h3>

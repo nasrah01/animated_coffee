@@ -3,6 +3,59 @@ import ScrollMagic from "scrollmagic"
 import * as Icon from '../assets/sprite.svg';
 
 
+export const navigate = () => {
+
+  const bar = document.querySelector('.main_heading-banner-nav');
+  const burger = document.querySelector('.main_heading-banner-burger');
+
+  const navigate__links = ` <li><a href="index.html" class="nav">About</a></li>
+                            <li><a href="index.html" class="nav">Cafes</a></li>
+                            <li><a href="index.html" class="nav">Resources</a></li>
+                            <li><a href="index.html" class="nav">The Blog</a></li>`;
+  bar.insertAdjacentHTML('beforeend', navigate__links);
+  burger.insertAdjacentHTML('beforeend', navigate__links);
+
+
+
+
+  const hamburger = document.querySelector('.menu__btn');
+
+    if(hamburger !== null) {
+        const screen = document.querySelector('.main_heading-banner');
+        const lineOne = document.querySelector('.navigation__one');
+        const lineTwo = document.querySelector('.navigation__two');
+        const lineThree = document.querySelector('.navigation__three');
+        const items = document.querySelectorAll('.main_heading-banner-burger li');
+
+        console.log(items);
+
+        const tl = gsap.timeline({paused: true, reversed: true});
+
+        gsap.globalTimeline.timeScale(.7);
+
+
+        tl
+        .to(lineOne, { y: 8, yoyo: true, ease: "Power1.easeInOut", duration: .2})
+        .to(lineThree, { y: -4.5, yoyo: true, ease: "Power1.easeInOut", duration: .2}, '-=0.2')
+        .to(lineOne, {rotation:-45, duration: .3})
+        .to(lineTwo, {opacity: 0,  duration: .3}, '-=.3')
+        .to(lineThree, {rotation:45,  duration: .3}, '-=.3') 
+        .to(screen,{ css:{height: "80vh"}, ease: "Circ.easeOut" , duration: .5}, '-=.1')
+        .to(items, {  css:{visibility: "visible"}, ease: "Power1.easeOut" , duration: .5}, "-=0.1")
+
+
+        hamburger.addEventListener('click', () => {
+            if (tl.reversed()) {
+                tl.play();
+            } else {
+                tl.reverse();
+            }    
+        }); 
+    } 
+
+}
+
+
 export const mouse = () => {
 
     gsap.set(".cursor", {xPercent: -50, yPercent: -50});
@@ -106,13 +159,13 @@ export const insertIcons = () => {
         const social = document.getElementById('social');
 
         const rendered = `<svg class="main_heading-banner-account--icon">
-                        <use xlink:href="${Icon}#icon-shopping-cart"></use>
+                        <use xlink:href="${Icon}#icon-shopping-basket"></use>
                         </svg>`;
 
         cart.insertAdjacentHTML('beforeend', rendered);
 
         const arrowRender = `<svg class="main_gallery-shop--icon">
-                            <use xlink:href="${Icon}#icon-arrow-long-right"></use>
+                            <use xlink:href="${Icon}#icon-arrow-right"></use>
                             </svg>`;
         
         arrow.insertAdjacentHTML('beforeend', arrowRender);
@@ -124,22 +177,22 @@ export const insertIcons = () => {
         heart.insertAdjacentHTML('afterend', heartRender);
 
         const facebook = `<a href="#" class="nav"><svg class="main_footer-content--social-icon">
-        <use xlink:href="${Icon}#icon-facebook-with-circle"></use>
+        <use xlink:href="${Icon}#icon-facebook"></use>
         </svg></a>`;
         social.insertAdjacentHTML('beforeend', facebook);
 
         const linkedin = `<a href="#" class="nav"><svg class="main_footer-content--social-icon">
-        <use xlink:href="${Icon}#icon-linkedin-with-circle"></use>
+        <use xlink:href="${Icon}#icon-linkedin"></use>
         </svg></a>`;
         social.insertAdjacentHTML('beforeend', linkedin);
 
         const twitter = `<a href="#" class="nav"><svg class="main_footer-content--social-icon">
-        <use xlink:href="${Icon}#icon-twitter-with-circle"></use>
+        <use xlink:href="${Icon}#icon-twitter"></use>
         </svg></a>`;
         social.insertAdjacentHTML('beforeend', twitter);
 
         const pinterest = ` <a href="#" class="nav"><svg class="main_footer-content--social-icon">
-        <use xlink:href="${Icon}#icon-pinterest-with-circle"></use>
+        <use xlink:href="${Icon}#icon-pinterest-p"></use>
         </svg></a>`;
         social.insertAdjacentHTML('beforeend', pinterest);
-      };
+ };

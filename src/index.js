@@ -8,6 +8,7 @@ const appController = () => {
     Preloader.preloadAnimation();
 
    // gsap animation for landing page
+    landing.navigate();
     landing.insertIcons();
     landing.mouse();
     landing.revealTitle();
