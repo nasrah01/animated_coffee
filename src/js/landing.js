@@ -8,10 +8,10 @@ export const navigate = () => {
   const bar = document.querySelector('.main_heading-banner-nav');
   const burger = document.querySelector('.main_heading-banner-burger');
 
-  const navigate__links = ` <li><a href="index.html" class="nav">About</a></li>
-                            <li><a href="index.html" class="nav">Cafes</a></li>
-                            <li><a href="index.html" class="nav">Resources</a></li>
-                            <li><a href="index.html" class="nav">The Blog</a></li>`;
+  const navigate__links = ` <li><a href="#" class="nav">About</a></li>
+                            <li><a href="#" class="nav">Cafes</a></li>
+                            <li><a href="#" class="nav">Resources</a></li>
+                            <li><a href="#" class="nav">The Blog</a></li>`;
   bar.insertAdjacentHTML('beforeend', navigate__links);
   burger.insertAdjacentHTML('beforeend', navigate__links);
 
@@ -50,7 +50,15 @@ export const navigate = () => {
             } else {
                 tl.reverse();
             }    
-        }); 
+        });
+        
+        items.forEach((item)  => {
+          item.addEventListener('click',() => {
+              
+              tl.reverse();
+              
+          });
+      }); 
     } 
 
 }
