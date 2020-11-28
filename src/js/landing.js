@@ -108,7 +108,7 @@ export const revealTitle = () => {
 
   console.log(window.innerHeight + ', ' + window.innerWidth);
 
-  let reveal = gsap.timeline({delay: 6});
+  let reveal = gsap.timeline({delay: 4});
 
   reveal.from("#headline", {scaleY: 0, transformOrigin: "0% 50%"})
   reveal.to("#headline", {duration: .75, scale: 1, transformOrigin:"50% bottom"})
@@ -162,7 +162,6 @@ export const secondaryAnimate = () => {
 //SVG ICONS
 export const insertIcons = () => {
         const cart = document.getElementById('cart');
-        const arrow = document.querySelector('.main_gallery-shop');
         const heart = document.querySelector('.main_footer--end-text');
         const social = document.getElementById('social');
 
@@ -171,12 +170,6 @@ export const insertIcons = () => {
                         </svg>`;
 
         cart.insertAdjacentHTML('beforeend', rendered);
-
-        const arrowRender = `<svg class="main_gallery-shop--icon">
-                            <use xlink:href="${Icon}#icon-arrow-right"></use>
-                            </svg>`;
-        
-        arrow.insertAdjacentHTML('beforeend', arrowRender);
 
         const heartRender = `<svg class="main_footer--end-icon">
                             <use xlink:href="${Icon}#icon-heart"></use>

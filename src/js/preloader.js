@@ -13,7 +13,7 @@ const text = () => {
 const textAnimate = () => {
    text();
 
-   const reveal = gsap.timeline({delay: .5});
+   const reveal = gsap.timeline();
 
    reveal.from(".preload_line", { scaleX: 0, transformOrigin: "top center" });
    reveal.from(".preload_head", { duration: 0.75, y: 45 }, "text");
@@ -33,6 +33,6 @@ export const preloadAnimation = () => {
          .set(main, {className: 'main'})
          .to(load, {yPercent: 100, ease: 'Power4.easeInOut', duration: 1})
          .set(load, {className: 'hidden'}, '+=1')
-      }, 5000)
+      }, 4000)
    });
 };
